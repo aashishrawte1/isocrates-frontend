@@ -1,0 +1,49 @@
+<div class="main_container" style="display: flex; flex-direction: column;">
+    <div class="container">
+        <div class="logo_user">
+            <img width="120px" height="120px" src="../../../assets/icons/user.png" />
+        </div>
+        <div class="login">
+            <div [formGroup]="registerForm" class="login_form">
+                <div class="form_container form_align" style="display: flex; flex-direction: column;">
+                    <div class="form-inputs" style="display: flex; flex-direction: row;">
+                        <label>
+                            First Name:
+                            <input type="text" style="width: 176px;" class="form-control" formControlName="first_name" placeholder="Your first name">
+                        </label>
+                        <label style="margin-left: 15px;">
+                            Last Name:
+                            <input type="text" style="width: 176px;" class="form-control" formControlName="last_name" placeholder="Your last name">
+                        </label>
+                    </div>
+                    <div class="form-inputs">
+                        <label>
+                            Email:
+                            <input type="email" class="form-control" formControlName="email" placeholder="Your email">
+                        </label>
+                    </div>
+                    <div class="form-inputs">
+                        <label>
+                            Password:
+                            <input type="text" class="form-control" formControlName="password" placeholder="Your password">
+                        </label>
+                    </div>
+                    <div class="form-inputs">
+                        <label>
+                            <label for="userType">Select User Type:</label>
+                            <select formControlName="userType" class="form-control" [attr.disabled]="true">
+                                <option value="" disabled>Select user type</option>
+                                <option value="admin">Admin</option>
+                                <option value="test_user">Test User</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <button class="login-button" style="margin-left: 35px;" (click)="logout()">Sign Out</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,159 @@
+<div class="dashboard">
+  <div class="header">
+    <app-header></app-header>
+  </div>
+  <div class="body" style="width: 100%;">
+    <div class="side_panel" style="width: 20%;">
+      <app-left-side-panel #leftSidePanel></app-left-side-panel>
+    </div>
+    <div class="main_panel" style="width: 100%;">
+      <div class="anlytics-card" style="display: flex; flex-direction: row; margin: 0 -7px 0 20px;">
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item card-header">
+              <div class="card-block">
+                <div class="row">
+                  <div class="number">125</div>
+                  <div class="card-name">Dashboard Created</div>
+                </div>
+                <div class="col">
+                  <img src="../../../assets/icons/dashboard-icons.png" >
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item card-body">
+              <p class="card-text"><span>-15% Fall </span> Since last week</p>
+              <img class="trending-icon white-image" src="../../../assets/icons/down-trend.png">
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item card-header">
+              <div class="card-block">
+                <div class="row">
+                  <div class="number">550</div>
+                  <div class="card-name">Dashboards Views</div>
+                </div>
+                <div class="col">
+                  <img src="../../../assets/icons/eye.png" >
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item card-body">
+              <p class="card-text"><span>+15% Increased </span> Since last week</p>
+              <img class="trending-icon white-image" src="../../../assets/icons/up-trend.png">
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item card-header">
+              <div class="card-block">
+                <div class="row">
+                  <div class="number">925</div>
+                  <div class="card-name">Dashboard Actions</div>
+                </div>
+                <div class="col">
+                  <img src="../../../assets/icons/dashboard-action.png" >
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item card-body">
+              <p class="card-text"><span>+15% Increased </span> Since last week</p>
+              <img class="trending-icon white-image" src="../../../assets/icons/up-trend.png">
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item card-header">
+              <div class="card-block">
+                <div class="row">
+                  <div class="number">250</div>
+                  <div class="card-name">Dashboards Downloaded</div>
+                </div>
+                <div class="col">
+                  <img src="../../../assets/icons/download.png" >
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item card-body">
+              <p class="card-text"><span>-15% Fall </span> Since last week</p>
+              <img class="trending-icon white-image" src="../../../assets/icons/down-trend.png">
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="chart_container">
+        <div class="activity-chart main_chart">
+          <div style="display: flex; flex-direction: row;">
+            <div class="left_display">
+              <span>User Activity</span>
+              <p style="font-size: 10px; color: gray">250 Users | lastupdated: {{ currentTime }}</p>
+            </div>
+            <div 
+              class="right_display" 
+            >
+              <span>Chart day range</span>
+              <select 
+                style="border-radius: 0; background-color: white; width: 120px;"
+                [(ngModel)]="selectedOption" 
+                (change)="onDropdownChange()"
+              >
+                <option value="7">Last 7 days</option>
+                <option value="15">Last 15 days</option>
+                <option value="30">Last 30 days</option>
+              </select>
+            </div>
+            
+          </div>
+          <div class="chart-container chart">
+            <canvas class="canvas" width="600" height="600" id="MyChart" >{{ chart }}</canvas>
+          </div>
+        </div>
+
+        <div class="activity-chart main_chart">
+          <div style="display: flex; flex-direction: row;">
+            <div class="left_display">
+              <span>Dashboard Action</span>
+              <p style="font-size: 10px; color: gray">250 Users | lastupdated: {{ currentTime }}</p>
+            </div>
+            <div 
+              class="right_display" 
+              style="display: flex; flex-direction: row; height: 10px; width: 20px; margin-right: 120px;"
+            >
+                <button (click)="changeButtonColor(1)" [ngClass]="{'gray-button': button1Color, 'blue-button': !button1Color}">
+                  Days
+                </button>
+                
+                <button (click)="changeButtonColor(2)" [ngClass]="{'gray-button': button2Color, 'blue-button': !button2Color}">
+                  Weeks
+                </button>
+                
+                <button (click)="changeButtonColor(3)" [ngClass]="{'gray-button': button3Color, 'blue-button': !button3Color}">
+                  Months
+                </button>
+            </div>
+            
+          </div>
+          <div class="chart-container chart">
+            <canvas class="canvas" width="600" height="600" id="MyChart2" >{{ chart }}</canvas>
+          </div>
+        </div>
+
+      </div>
+      
+
+      <footer>
+        <div class="footer">
+          <app-footer></app-footer>
+        </div>
+  
+      </footer>
+      
+    </div>
+    
+  </div>
+</div>

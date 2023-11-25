@@ -1,0 +1,62 @@
+<div class="main_container">
+
+    <div class="container">
+        <span class="heading-login">
+            <h1>Register...</h1>
+        </span>
+        <div class="login">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)" class="login_form">
+                <div class="form_container form_align">
+                    <div class="form-inputs" style="display: flex; flex-direction: row;">
+                        <label>
+                            First Name:
+                            <input type="text" style="width: 176px;" class="form-control" formControlName="first_name" placeholder="Your first name">
+                        </label>
+                        <label style="margin-left: 15px;">
+                            Last Name:
+                            <input type="text" style="width: 176px;" class="form-control" formControlName="last_name" placeholder="Your last name">
+                        </label>
+                    </div>
+                    <div class="form-inputs">
+                        <label>
+                            Email:
+                            <input type="email" class="form-control" formControlName="email" placeholder="Your email">
+                        </label>
+                    </div>
+                    <div class="form-inputs" style="display: flex; flex-direction: row;">
+                        <label>
+                            Password:
+                            <input type="password" style="width: 176px;" class="form-control" formControlName="password"
+                                placeholder="Enter password">
+                        </label>
+                        <label style="margin-left: 15px;">
+                            Comfirm Password:
+                            <input type="password" style="width: 176px;" class="form-control" formControlName="confirm_password"
+                                placeholder="Comfirm password">
+                        </label>
+                    </div>
+                    <div class="form-inputs">
+                        <label>
+                            <label for="userType">Select User Type:</label>
+                            <select formControlName="userType" class="form-control">
+                            <option value="" disabled>Select user type</option>
+                            <option value="admin">Admin</option>
+                            <option value="test_user">Test User</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="remember">
+                        <p>Already have an account? <span style="text-decoration: underline; color: #3498db; pointer-events: auto;" (click)="navigateToAuth()">Signin</span></p>
+                    </div>
+
+                    <button class="login-button" type="submit">Sign Up</button>
+
+                </div>
+                
+
+            </form>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+}
+
+header {
+    height: 60px;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    z-index: 1000; /* Ensure the header is above other content */
+    right: 0;
+    position: fixed;
+    background: linear-gradient(to right, white, white);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+.main_container {
+    display: flex;
+    flex-direction: row;
+    right: 0;
+    position: fixed;
+    transform: translate(-10%, 50%); 
+    text-align: center;
+    justify-content: space-between;
+}
+
+.main_container > * {
+    margin: 0; /* Reset margin */
+  }
+
+.main_container div {
+    margin: 0 0 0 20px;
+}
+
+.custom-select, button{
+    border: none;
+    font-weight: bold;
+    background: white;
+}
+
+.profile {
+    width: 35px;
+    height: 35px;
+    background-color: #109cf3 !important;
+    border-radius: 50%;
+    color: white !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: -20px;
+
+    button {
+        background: #109cf3;
+        border-radius: 50%;
+    }
+    
+}

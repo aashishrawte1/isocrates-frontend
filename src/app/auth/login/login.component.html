@@ -1,0 +1,46 @@
+<div class="main_container">
+
+    <div class="container">
+        <span class="heading-login">
+            <h1>Login...</h1>
+        </span>
+        <div class="login">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" class="login_form">
+                <div class="form_container form_align">
+                    <div class="form-inputs">
+                        <label>
+                            Email:
+                            <input type="email" class="form-control" formControlName="email" placeholder="Your email">
+                        </label>
+                    </div>
+                    <div class="form-inputs">
+                        <label>
+                            Password
+                            <input type="password" class="form-control" formControlName="password"
+                                placeholder="Your password">
+                        </label>
+                    </div>
+                    <div class="remember">
+                        <label>
+                            <input class="form-check-label" type="checkbox" formControlName="remember_me"
+                                placeholder="Remember me">
+                            Remember me
+                        </label>
+                        <div style="display: flex; flex-direction: row;">
+                            <p>Don't have an account? <span style="text-decoration: underline; color: #3498db; pointer-events: auto;" (click)="navigateToAuth()">Signup</span></p>
+                            <a routerLink="/forget-password">Forget password</a>
+                        </div>
+                        
+                    </div>
+
+                    <button class="login-button" type="submit">LogIn</button>
+
+                </div>
+                
+
+            </form>
+        </div>
+
+    </div>
+
+</div>

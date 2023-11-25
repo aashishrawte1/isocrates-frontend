@@ -1,0 +1,40 @@
+<div class="sidebar" [ngClass]="{'active': isSidebarOpen, 'inactive': !isSidebarOpen}">
+  <div class="sidepanel">
+    <!-- <div *ngIf="!isSidebarOpen" class="open-icon white-image" (click)="toggleSidebar()">
+      <img width="25px" height="25px" src="../../../assets/icons/right.png">
+    </div> -->
+    <div *ngIf="isSidebarOpen" class="close-icon">
+      <div style="display: flex; flex-direction: row;">
+        <img style="margin: 2% 0 0 2%;" width="20px" height="20px" class="white-image"
+          src="../../../assets/icons/menu.png">
+        <img (click)="toggleSidebar()" style="margin: 2% 0 0 76%;" width="20px" height="20px" class="white-image"
+          src="../../../assets/icons/back.png">
+
+      </div>
+      <div>
+        <ul class="active-list">
+          <li *ngFor="let item of sidebarItems">
+            <div>
+              <a href="#" (click)="item.expanded = !item.expanded">
+                <img width="20px" height="20px" class="white-image" src="{{item.src}}"> {{ item.name }}
+                <span *ngIf="item.subOptions?.length" class="arrow"><img class="white-image" width="15px" height="15px"
+                    style="margin-left: -30px;"
+                    src="{{ item.expanded ? '../../../assets/icons/upload.png' : '../../../assets/icons/down-arrow.png' }}"></span>
+              </a>
+            </div>
+            <ul style="margin-top: 15px;" *ngIf="item.subOptions?.length && item.expanded">
+              <li *ngFor="let subItem of item.subOptions">
+                <div [class.selected]="subItem.id === selectedItemId">
+                    <a href="#" (click)="selectItem(subItem.id)"><img width="20px" height="20px" class="white-image" src="{{subItem.src}}"> {{ subItem.name
+                      }}</a>
+                  </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</div>
