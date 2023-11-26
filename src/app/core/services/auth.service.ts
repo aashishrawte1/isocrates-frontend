@@ -55,4 +55,8 @@ export class AuthService {
     //     return true;
     //   }
     // }
+
+    forgetPassword(email: any) {
+      return this.http.post(`${environments.apiUrl}/forget-password`, { email });
+    }
 }
