@@ -5,7 +5,7 @@
             <h1>Login...</h1>
         </span>
         <div class="login">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" class="login_form">
+            <form [formGroup]="loginForm" class="login_form">
                 <div class="form_container form_align">
                     <div class="form-inputs">
                         <label>
@@ -28,12 +28,14 @@
                         </label>
                         <div style="display: flex; flex-direction: row;">
                             <p>Don't have an account? <span style="text-decoration: underline; color: #3498db; pointer-events: auto;" (click)="navigateToAuth()">Signup</span></p>
-                            <a style="right: 0; position: absolute;" routerLink="/forget-password">Forget password?</a>
+                            <button (click)="forgetPassword()" style="background: none; border: none; right: 0; position: absolute;">
+                                Forget password?
+                            </button>
                         </div>
                         
                     </div>
 
-                    <button class="login-button" type="submit">LogIn</button>
+                    <button (click)="onSubmit(loginForm)" class="login-button" type="submit">LogIn</button>
 
                 </div>
                 

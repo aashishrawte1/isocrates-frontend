@@ -60,4 +60,16 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/register']);
   }
 
+  forgetPassword() {
+    if(this.loginForm.value.email) {
+      alert(this.loginForm.value.email);
+      this.authService.forgetPassword(this.loginForm.value.email).subscribe(response => {
+        console.log(response);
+        // alert(response.message);
+      })
+    } else {
+      alert('enter email first to proceeding for password reset');
+    }
+  }
+
 }

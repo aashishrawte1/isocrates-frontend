@@ -39,7 +39,8 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'dashboard/user-acitvity',
-  }
+  },
+  { path: 'reset-password/:resetToken', component: ForgetPasswordComponent },
 
 
 ];
